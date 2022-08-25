@@ -1,0 +1,30 @@
+
+test_data/
+build/
+dist/
+__pycache__/
+gtf2seq.egg-info/
+
+## awk '$1=="Mt"' Zea_mays.B73_RefGen_v4.50.chr.gtf > Zea_mays.B73_RefGen_v4.50.Mt.gtf
+#awk '$1=="1"' test_data/Zea_mays.B73_RefGen_v4.50.chr.gtf > test_data/Zea_mays.B73_RefGen_v4.50.Chr1.gtf
+# Zm00001d022653 lincRNA
+#grep 'Zm00001d027230\|Zm00001d027231\|Zm00001d027240\|Zm00001d022653' test_data/Zea_mays.B73_RefGen_v4.50.Chr1.gtf  > test.gtf
+#grep -v '^#' test_data/Mo17.vcf |perl -e 'while(<>){@aa=split;print "$_" if ((length $aa[3]) == 1 && (length $aa[4]) == 1); }' - |cat <(grep '^#CHROM' test_data/Mo17.vcf) - > test_data/Mo17_snp.vcf
+#:samtools faidx test_data/Zea_mays.B73_RefGen_v4.dna.toplevel.fa 1:1-3170492 > test_data/test.fa
+
+
+#GTF.py
+#Rewritten on Jun 27, 2021
+#Originally written by Kamil Slowikowski.
+#December 24, 2013
+#Read GFF/GTF files. Works with gzip compressed files and pandas.
+#    http://useast.ensembl.org/info/website/upload/gff.html
+#Downloaded by SNF on 12/30/14 from https://gist.github.com/slowkow/8101481
+# - pandas support removed to minimize package requirements
+
+# /m*/o*/e*2/p*t/gff2seq
+
+##  rm -rf build/ dist/ gtf2seq.egg-info/ __pycache__/
+## python setup.py sdist bdist_wheel
+## twine upload dist/*
+
